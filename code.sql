@@ -1,8 +1,6 @@
 DROP TABLE IF EXISTS person;
-DROP TABLE IF EXISTS car;
 DROP TABLE IF EXISTS pet;
 DROP TABLE IF EXISTS person_pet;
-DROP TABLE IF EXISTS person_car;
 
 CREATE TABLE person (
   id INTEGER PRIMARY KEY,
@@ -19,21 +17,9 @@ CREATE TABLE pet (
   dead INTEGER
 );
 
-CREATE TABLE car (
-  id INTEGER PRIMARY KEY,
-  make TEXT,
-  model TEXT,
-  year INTEGER
-);
-
 CREATE TABLE person_pet (
   person_id INTEGER,
   pet_id INTEGER
-);
-
-CREATE TABLE person_car (
-  person_id INTEGER
-  car_id INTEGER
 );
 
 ALTER TABLE person ADD COLUMN height INTEGER;
