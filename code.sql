@@ -1,8 +1,8 @@
-DROP TABLE person;
-DROP TABLE pet;
-DROP TABLE car;
-DROP TABLE person_pet;
-DROP TABLE person_car;
+DROP TABLE IF EXISTS person;
+DROP TABLE IF EXISTS car;
+DROP TABLE IF EXISTS pet;
+DROP TABLE IF EXISTS person_pet;
+DROP TABLE IF EXISTS person_car;
 
 CREATE TABLE person (
   id INTEGER PRIMARY KEY,
@@ -35,6 +35,10 @@ CREATE TABLE person_car (
   person_id INTEGER
   car_id INTEGER
 );
+
+ALTER TABLE person ADD COLUMN height INTEGER;
+ALTER TABLE person ADD COLUMN weight INTEGER;
+
 INSERT INTO person (id, first_name, last_name, age)
   VALUES
   (0, "Zed", "Shaw", 37),
