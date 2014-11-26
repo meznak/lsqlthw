@@ -36,26 +36,18 @@ CREATE TABLE person_car (
   car_id INTEGER
 );
 INSERT INTO person (id, first_name, last_name, age)
-  VALUES (0, "Zed", "Shaw", 37);
+  VALUES
+  (0, "Zed", "Shaw", 37),
+  (1, "Nate", "P", 32);
 
 INSERT INTO pet (id, name, breed, age, dead)
-  VALUES (0, "Fluffy", "Unicorn", 1000, 0);
+  VALUES
+  (0, "Fluffy", "Unicorn", 1000, 0),
+  (1, "Gigantor", "Robot", 1, 1),
+  (2, "Dorian", "Cat", 5, 0);
 
-INSERT INTO pet VALUES (1, "Gigantor", "Robot", 1, 1);
-INSERT INTO person_pet (person_id, pet_id) VALUES (0,0);
-INSERT INTO person_pet VALUES (0,1);
-SELECT * FROM person;
-SELECT name, age FROM pet;
-SELECT name, age FROM pet WHERE dead = 0;
-SELECT * FROM person WHERE first_name != "Zed";
-SELECT pet.id, pet.name, pet.age, pet.dead
-  FROM pet, person_pet, person
-  WHERE
-  pet.id = person_pet.pet_id AND
-  person_pet.person_id = person.id AND
-  person.first_name = "Zed";
-SELECT name, age FROM pet WHERE dead = 1;
-DELETE FROM pet WHERE dead = 1;
-SELECT * FROM pet;
-INSERT INTO pet VALUES (1, "Gigantor", "Robot", 1, 0);
-SELECT * FROM pet;
+INSERT INTO person_pet (person_id, pet_id)
+  VALUES
+  (0,0),
+  (0,1),
+  (1,2);
